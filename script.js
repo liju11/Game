@@ -5,9 +5,11 @@ var spielfeld = document.querySelector('.playground')
 var backgroundPosition = 0;
 
 function loop() {
+    // Background-Scrolling:
     backgroundPosition = backgroundPosition + 5;
     spielfeld.style.backgroundPosition = `-${backgroundPosition}px 0`;
-    
+
+    // Tastatursteuerung links-rechts:
     if(keyboard(39)) {
         spieler.style.left = parseInt(spieler.style.left) + 5 + 'px'
     }
