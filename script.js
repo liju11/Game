@@ -71,6 +71,17 @@ function loop() {
         }
     }
 
+    // Kollision mit Tor oder Stein:
+    if(anyCollision(spieler, [tore1, tore2, stein])) {
+        alert("Game over!")
+        return
+    }
+
+    var collisions = allCollisions(spieler, [tore1, tore2, stein])
+    for(var collision of collisions) {
+        collision.parentNode.removeChild(collision)
+    }
+
 
     window.requestAnimationFrame(loop)
 }
