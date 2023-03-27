@@ -9,8 +9,8 @@ var timer = new Timer(30)
 
 function loop() {
     // Background-Scrolling:
-    backgroundPosition = backgroundPosition + 5;
-    spielfeld.style.backgroundPosition = `-${backgroundPosition}px 0`;
+    backgroundPosition = backgroundPosition + 2;
+    spielfeld.style.backgroundPosition = `0 -${backgroundPosition}px`;
 
     // Tastatursteuerung links-rechts:
     if(keyboard(39)) {
@@ -72,7 +72,7 @@ function loop() {
     }
 
     // Kollision mit Tor oder Stein:
-    if(anyCollision(spieler, [tore1, tore2, stein])) {
+    /*if(anyCollision(spieler, [tore1, tore2, stein])) {
         alert("Game over!")
         return
     }
@@ -80,7 +80,7 @@ function loop() {
     var collisions = allCollisions(spieler, [tore1, tore2, stein])
     for(var collision of collisions) {
         collision.parentNode.removeChild(collision)
-    }
+    }*/
 
 
     window.requestAnimationFrame(loop)

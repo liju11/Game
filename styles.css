@@ -17,17 +17,15 @@
 
 .player {
     position: absolute;
-    background-image: url(Bilder/player.png);
-    background-size: contain;
     width: 10vw;
-    height: 10vw;
 }
 
 .stein {
     position: absolute;
-    width: 30px;
-    height: 30px;
-    background-image: url(Bilder/)
+    width: 35px;
+    height: 28px;
+    background-image: url(Bilder/Stein.png);
+    background-size: contain;
 }
 
 .tor1 {
