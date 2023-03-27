@@ -1,24 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.body {
+    overflow: hidden;
+}
+
 .playground {
     position: relative;
     width: 100vw;
     height: 100vh;
     background-image: url(Bilder/Background.jpg);
     background-size: cover;
-    overflow: hidden;
 }
 
 .player {
     position: absolute;
-    background-color: red;
-    width: 20px;
-    height: 20px;
+    background-image: url(Bilder/player.png);
+    background-size: contain;
+    width: 10vw;
+    height: 10vw;
 }
 
 .stein {
     position: absolute;
-    width: 20px;
-    height: 20px;
-    background-color: grey;
+    width: 30px;
+    height: 30px;
+    background-image: url(Bilder/)
 }
 
 .tor1 {
