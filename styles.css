@@ -17,27 +17,30 @@
 
 .player {
     position: absolute;
-    width: 10vw;
+    width: 120px;
+    top: 150px;
+}
+
+.player_left {
+    transform: scaleX(-1);
 }
 
 .stein {
     position: absolute;
     width: 35px;
-    height: 28px;
-    background-image: url(Bilder/Stein.png);
-    background-size: contain;
 }
 
 .tor1 {
     position: absolute;
-    width: 20px;
-    height: 20px;
-    background-color: blue;
+    width: 50px;
 }
 
 .tor2 {
     position: absolute;
-    width: 20px;
-    height: 20px;
-    background-color: red;
+    width: 50px;
+}
+
+.stern {
+    position: absolute;
+    width: 40px;
 }
