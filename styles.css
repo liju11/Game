@@ -11,7 +11,7 @@
     position: relative;
     width: 100vw;
     height: 100vh;
-    background-image: url(Bilder/Background.jpg);
+    background-image: url(Bilder/Background_loop.jpg);
     background-size: cover;
 }
 
