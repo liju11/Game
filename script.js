@@ -11,8 +11,6 @@ var timer_stern = new Timer(360)
 
 
 
-
-
 function loop() {
     // Background-Scrolling:
     backgroundPosition = backgroundPosition + 2;
@@ -103,15 +101,16 @@ function loop() {
     }
 
     // Kollision mit Tor oder Stein:
-    /*if(anyCollision(spieler, [tore1, tore2, stein])) {
+    if(anyCollision(spieler, tore1) || anyCollision(spieler, tore2) || anyCollision(spieler, steine)) {
         alert("Game over!")
         return
     }
 
-    var collisions = allCollisions(spieler, [tore1, tore2, stein])
+    // Kollision mit Stern
+    var collisions = allCollisions(spieler, sterne)
     for(var collision of collisions) {
         collision.parentNode.removeChild(collision)
-    }*/
+    }
 
 
     window.requestAnimationFrame(loop)
