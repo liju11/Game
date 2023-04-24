@@ -1,4 +1,5 @@
 var spieler = document.querySelector('.player')
+var rand = document.querySelector('.rand')
 spieler.style.left = '380px'
 
 var spielfeld = document.querySelector('.playground')
@@ -48,7 +49,7 @@ function loop() {
     // Hindernis - Tor Blau:
     if(timer_b.ready()) {
         var b = document.createElement('img')
-        b.src='Bilder/Tor_blau.png'
+        b.src='Bilder/Tor_blau_rand.png'
         b.classList.add('tor1')
         b.style.top = document.body.clientHeight + "px"
         b.style.left = 30 + Math.random () * 20 + 'vw'
@@ -101,7 +102,7 @@ function loop() {
     }
 
     // Kollision mit Tor oder Stein:
-    if(anyCollision(spieler, tore1) || anyCollision(spieler, tore2) || anyCollision(spieler, steine)) {
+    if(anyCollision(spieler, tore1) || anyCollision(spieler, tore2) || anyCollision(spieler, steine) || anyCollision(spieler, rand)) {
         alert("Game over!")
         return
     }

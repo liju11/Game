@@ -12,14 +12,30 @@
     position: relative;
     width: 100vw;
     height: 100vh;
-    background-image: url(Bilder/Background_loop.jpg);
+    background-image: url(Bilder/Background_loop_ohne_Begrenzung.jpg);
     background-size: cover;
+}
+
+.rand {
+    position: absolute;
+    background-image: url(Bilder/Rand.png);
+    width: 1.3vw;
+    height: 100vw;
+}
+
+.rand_links {
+    left: 20vw;
+}
+
+.rand_rechts {
+    right: 20vw;
 }
 
 .player {
     position: absolute;
     width: 120px;
     top: 150px;
+    z-index: 2;
 }
 
 .player_left {
@@ -33,12 +49,12 @@
 
 .tor1 {
     position: absolute;
-    width: 50px;
+    height: 100px;
 }
 
 .tor2 {
     position: absolute;
-    width: 50px;
+    height: 100px;
 }
 
 .stern {
