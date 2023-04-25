@@ -1,6 +1,9 @@
 var spieler = document.querySelector('.player')
+var spielerbody = document.querySelector('.playerbody')
 var rand = document.querySelector('.rand')
-spieler.style.left = '380px'
+var rand_l = document.querySelector('.rand_links')
+spieler.style.left = rand_l.offsetLeft + 50 + 'px'
+spielerbody.style.left = rand_l.offsetLeft + 85 + 'px'
 
 var spielfeld = document.querySelector('.playground')
 var backgroundPosition = 0;
@@ -9,23 +12,46 @@ var timer_b = new Timer(240)
 var timer_r = new Timer(480)
 var timer_stein = new Timer(240)
 var timer_stern = new Timer(360)
+var timer_rand = new Timer(0)
 
 
 
 function loop() {
     // Background-Scrolling:
-    backgroundPosition = backgroundPosition + 2;
+    backgroundPosition = backgroundPosition + 5;
     spielfeld.style.backgroundPosition = `0 -${backgroundPosition}px`;
 
     // Tastatursteuerung links-rechts:
     if(keyboard(39)) {
-        spieler.style.left = parseInt(spieler.style.left) + 5 + 'px'
+        spieler.style.left = parseInt(spieler.style.left) + 10 + 'px'
+        spielerbody.style.left = parseInt(spieler.style.left) + 20 + "px"
         spieler.classList.remove('player_left')
     }
 
     if(keyboard(37)) {
-        spieler.style.left = parseInt(spieler.style.left) - 5 + 'px'
+        spieler.style.left = parseInt(spieler.style.left) - 10 + 'px'
+        spielerbody.style.left = parseInt(spieler.style.left) + 30 + "px"
         spieler.classList.add('player_left')
+    }
+
+    // if(keyboard(16)) {
+    //     ...
+    // }
+
+
+    // Hindernis - Rand:
+    if(timer_rand.ready()) {
+        var l = document.createElement('img')
+        l.src="Bilder/Rand.png"
+        l.classList.add('rand')
+    }
+
+    var raender = document.querySelectorAll('.rand')
+    for(var rand of raender) {
+        rand.style.top = parseInt(rand.style.top) - 5 + 'px'
+        if(parseInt(rand.style.top) < -100) {
+            rand.parentNode.removeChild(rand)
+        }
     }
 
     // Hindernis - Stein:
@@ -40,7 +66,7 @@ function loop() {
 
     var steine = document.querySelectorAll('.stein')
     for(var stein of steine) {
-        stein.style.top = parseInt(stein.style.top) - 2 + 'px'
+        stein.style.top = parseInt(stein.style.top) - 5 + 'px'
         if(parseInt(stein.style.top) < -100) {
             stein.parentNode.removeChild(stein)
         }
@@ -59,7 +85,7 @@ function loop() {
 
     var tore1 = document.querySelectorAll('.tor1')
     for(var tor1 of tore1) {
-        tor1.style.top = parseInt(tor1.style.top) - 2 + 'px'
+        tor1.style.top = parseInt(tor1.style.top) - 5 + 'px'
         if(parseInt(tor1.style.top) < -100) {
             tor1.parentNode.removeChild(tor1)
         }
@@ -77,7 +103,7 @@ function loop() {
 
     var tore2 = document.querySelectorAll('.tor2')
     for(var tor2 of tore2) {
-        tor2.style.top = parseInt(tor2.style.top) - 2 + 'px'
+        tor2.style.top = parseInt(tor2.style.top) - 5 + 'px'
         if(parseInt(tor2.style.top) < -100) {
             tor2.parentNode.removeChild(tor2)
         }
@@ -95,14 +121,14 @@ function loop() {
 
     var sterne = document.querySelectorAll('.stern')
     for(var stern of sterne) {
-        stern.style.top = parseInt(stern.style.top) - 2 + 'px'
+        stern.style.top = parseInt(stern.style.top) - 5 + 'px'
         if(parseInt(stern.style.top) < -100) {
             stern.parentNode.removeChild(stern)
         }
     }
 
     // Kollision mit Tor oder Stein:
-    if(anyCollision(spieler, tore1) || anyCollision(spieler, tore2) || anyCollision(spieler, steine) || anyCollision(spieler, rand)) {
+    if(anyCollision(spielerbody, tore1) || anyCollision(spielerbody, tore2) || anyCollision(spielerbody, steine) || anyCollision(spielerbody, raender)) {
         alert("Game over!")
         return
     }
