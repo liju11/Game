@@ -29,8 +29,6 @@ function loop() {
         if(keyboard(16)) {
             spieler.style.left = parseInt(spieler.style.left) + 20 + 'px'
             spielerbody.style.left = parseInt(spieler.style.left) + 40 + "px"
-            // backgroundPosition = backgroundPosition + 10;
-            // spielfeld.style.backgroundPosition = `0 -${backgroundPosition}px`;  
         }
     }
 
@@ -40,9 +38,7 @@ function loop() {
         spieler.classList.add('player_left')
         if(keyboard(16)) {
             spieler.style.left = parseInt(spieler.style.left) - 20 + 'px'
-            spielerbody.style.left = parseInt(spieler.style.left) + 60 + "px"
-            // backgroundPosition = backgroundPosition + 10;
-            // spielfeld.style.backgroundPosition = `0 -${backgroundPosition}px`;     
+            spielerbody.style.left = parseInt(spieler.style.left) + 60 + "px"   
         }
     }
 
