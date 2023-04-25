@@ -26,17 +26,25 @@ function loop() {
         spieler.style.left = parseInt(spieler.style.left) + 10 + 'px'
         spielerbody.style.left = parseInt(spieler.style.left) + 20 + "px"
         spieler.classList.remove('player_left')
+        if(keyboard(16)) {
+            spieler.style.left = parseInt(spieler.style.left) + 20 + 'px'
+            spielerbody.style.left = parseInt(spieler.style.left) + 40 + "px"
+            // backgroundPosition = backgroundPosition + 10;
+            // spielfeld.style.backgroundPosition = `0 -${backgroundPosition}px`;  
+        }
     }
 
     if(keyboard(37)) {
         spieler.style.left = parseInt(spieler.style.left) - 10 + 'px'
         spielerbody.style.left = parseInt(spieler.style.left) + 30 + "px"
         spieler.classList.add('player_left')
+        if(keyboard(16)) {
+            spieler.style.left = parseInt(spieler.style.left) - 20 + 'px'
+            spielerbody.style.left = parseInt(spieler.style.left) + 60 + "px"
+            // backgroundPosition = backgroundPosition + 10;
+            // spielfeld.style.backgroundPosition = `0 -${backgroundPosition}px`;     
+        }
     }
-
-    // if(keyboard(16)) {
-    //     ...
-    // }
 
 
     // Hindernis - Rand:
