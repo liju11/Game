@@ -6,10 +6,14 @@ spieler.style.left = rand_l.offsetLeft + 50 + 'px'
 spielerbody.style.left = rand_l.offsetLeft + 85 + 'px'
 
 var spielfeld = document.querySelector('.playground')
+// var start = document.querySelector('.start')
 var backgroundPosition = 0;
 
-var timer_b = new Timer(240)
-var timer_r = new Timer(480)
+var punkteAnzeige = document.querySelector('.punkte')
+var score = 0
+
+var timer_b = new Timer(200)
+var timer_r = new Timer(400)
 var timer_stein = new Timer(240)
 var timer_stern = new Timer(360)
 var timer_rand = new Timer(0)
@@ -20,6 +24,8 @@ function loop() {
     // Background-Scrolling:
     backgroundPosition = backgroundPosition + 5;
     spielfeld.style.backgroundPosition = `0 -${backgroundPosition}px`;
+    // start.style.backgroundPosition = `0 -${backgroundPosition}px`;
+
 
     // Tastatursteuerung links-rechts:
     if(keyboard(39)) {
@@ -141,6 +147,12 @@ function loop() {
     var collisions = allCollisions(spieler, sterne)
     for(var collision of collisions) {
         collision.parentNode.removeChild(collision)
+    }
+
+    // Punkte
+    for(var collision of collisions) {
+        score = score + 20
+        punkteAnzeige.textContent = score
     }
 
 

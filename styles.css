@@ -16,6 +16,32 @@
     background-size: cover;
 }
 
+/*.start {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-image: url(Bilder/Start.jpg);
+    background-size: cover;
+    z-index: 2;
+}*/
+
+.score {
+    position: fixed;
+    right: 0;
+    top: 84vh;
+    width: 18vw;
+    height: 4vh;
+    background-image: url(Bilder/Punkteanzeige.png);
+}
+
+.punkte {
+    position: relative;
+    width: 70%;
+    left: 20%;
+    font-size: medium;
+    font-weight: 600;
+}
+
 .rand {
     position: absolute;
     background-image: url(Bilder/Rand.png);
