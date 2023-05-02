@@ -13,7 +13,9 @@ var punkteAnzeige = document.querySelector('.punkte')
 var score = 0
 
 var timer_b = new Timer(200)
+var timer_block_b = new Timer(200)
 var timer_r = new Timer(400)
+var timer_block_r = new Timer(400)
 var timer_stein = new Timer(240)
 var timer_stern = new Timer(360)
 var timer_rand = new Timer(0)
@@ -85,12 +87,12 @@ function loop() {
     // Hindernis - Tor Blau:
     if(timer_b.ready()) {
         var b = document.createElement('img')
-        b.src='Bilder/Tor_blau_rand.png'
+        b.src='Bilder/Tor_blau.png'
         b.classList.add('tor1')
         b.style.top = document.body.clientHeight + "px"
         b.style.left = 30 + Math.random () * 20 + 'vw'
         spielfeld.appendChild(b)
-        timer_b = new Timer(480)
+        timer_b = new Timer(400)
     }
 
     var tore1 = document.querySelectorAll('.tor1')
@@ -101,13 +103,32 @@ function loop() {
         }
     }
 
+    if(timer_block_b.ready()) {
+        var block_b = document.createElement('div')
+        block_b.classList.add('block_blau')
+        block_b.style.top = document.body.clientHeight + 50 + 'px'
+        block_b.style.left = b.style.left
+        spielfeld.appendChild(block_b)
+        timer_block_b = new Timer(400)
+    }
+
+    var bloecke_b = document.querySelectorAll('.block_blau')
+    for(var block_b of bloecke_b) {
+        block_b.style.top = parseInt(block_b.style.top) - 5 + 'px'
+        if(parseInt(block_b.style.top) < -100) {
+            block_b.parentNode.removeChild(block_b)
+        }
+    }
+
+
     // Hindernis - Tor Rot:
     if(timer_r.ready()) {
         var r = document.createElement('img')
         r.src='Bilder/Tor_rot.png'
         r.classList.add('tor2')
         r.style.top = document.body.clientHeight + "px"
-        r.style.left = 50 + Math.random () * 20 + 'vw'
+        //r.style.left = 50 + Math.random () * 20 + 'vw'
+        r.style.right = 30 + Math.random () * 20 + 'vw'
         spielfeld.appendChild(r)
     }
 
@@ -116,6 +137,22 @@ function loop() {
         tor2.style.top = parseInt(tor2.style.top) - 5 + 'px'
         if(parseInt(tor2.style.top) < -100) {
             tor2.parentNode.removeChild(tor2)
+        }
+    }
+
+    if(timer_block_r.ready()) {
+        var block_r = document.createElement('div')
+        block_r.classList.add('block_rot')
+        block_r.style.top = document.body.clientHeight + 50 + 'px'
+        block_r.style.right = r.style.right
+        spielfeld.appendChild(block_r)
+    }
+
+    var bloecke_r = document.querySelectorAll('.block_rot')
+    for(var block_r of bloecke_r) {
+        block_r.style.top = parseInt(block_r.style.top) - 5 + 'px'
+        if(parseInt(block_r.style.top) < -100) {
+            block_r.parentNode.removeChild(block_r)
         }
     }
 
@@ -139,8 +176,13 @@ function loop() {
 
     // Kollision mit Tor oder Stein:
     if(anyCollision(spielerbody, tore1) || anyCollision(spielerbody, tore2) || anyCollision(spielerbody, steine) || anyCollision(spielerbody, raender)) {
-        alert("Game over!")
+        alert("Game over! Collision.")
         return
+    }
+
+    // Tor verpasst
+    if(anyCollision(spielerbody, bloecke_b) || anyCollision(spielerbody, bloecke_r)) {
+        alert("Game over! Missed gate.")
     }
 
     // Kollision mit Stern

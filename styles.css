@@ -87,9 +87,20 @@
     height: 100px;
 }
 
+.block_blau {
+    position: relative;
+    width: 80vw;
+    height: 50px;
+}
+
 .tor2 {
     position: absolute;
     height: 100px;
+}
+
+.block_rot {
+    position: relative;
+    height: 50px;
 }
 
 .stern {
