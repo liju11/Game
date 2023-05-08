@@ -183,6 +183,7 @@ function loop() {
     // Tor verpasst
     if(anyCollision(spielerbody, bloecke_b) || anyCollision(spielerbody, bloecke_r)) {
         alert("Game over! Missed gate.")
+        return
     }
 
     // Kollision mit Stern
