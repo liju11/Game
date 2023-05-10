@@ -12,8 +12,8 @@
     position: relative;
     width: 100vw;
     height: 100vh;
-    background-image: url(Bilder/Background_loop_ohne_Begrenzung.jpg);
-    background-size: cover;
+    background-image: url(Bilder/Start_V2.jpg);
+    background-size: auto;
 }
 
 /*.start {

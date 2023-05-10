@@ -12,6 +12,9 @@ var backgroundPosition = 0;
 var punkteAnzeige = document.querySelector('.punkte')
 var score = 0
 
+// var start = true
+//var vh = document.body.clientHeight
+
 var timer_b = new Timer(200)
 var timer_block_b = new Timer(200)
 var timer_r = new Timer(400)
@@ -25,8 +28,14 @@ var timer_rand = new Timer(0)
 function loop() {
     // Background-Scrolling:
     backgroundPosition = backgroundPosition + 5;
+    if(backgroundPosition > 4239.35) {
+        backgroundPosition = 750.175
+    }
     spielfeld.style.backgroundPosition = `0 -${backgroundPosition}px`;
-    // start.style.backgroundPosition = `0 -${backgroundPosition}px`;
+    /*if(backgroundPosition > 0.5 * vh && start) {
+        start = false
+        spielfeld.style.backgroundImage =  "url(Bilder/Background_loop_ohne_Begrenzung.jpg)"
+    }*/
 
 
     // Tastatursteuerung links-rechts:
