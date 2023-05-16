@@ -4,16 +4,11 @@ var rand = document.querySelector('.rand')
 var rand_l = document.querySelector('.rand_links')
 spieler.style.left = rand_l.offsetLeft + 50 + 'px'
 spielerbody.style.left = rand_l.offsetLeft + 85 + 'px'
-
 var spielfeld = document.querySelector('.playground')
-// var start = document.querySelector('.start')
 var backgroundPosition = 0;
 
 var punkteAnzeige = document.querySelector('.punkte')
 var score = 0
-
-// var start = true
-//var vh = document.body.clientHeight
 
 var timer_b = new Timer(200)
 var timer_block_b = new Timer(200)
@@ -21,22 +16,18 @@ var timer_r = new Timer(400)
 var timer_block_r = new Timer(400)
 var timer_stein = new Timer(240)
 var timer_stern = new Timer(360)
-var timer_rand = new Timer(0)
-
-
+var timer_rand = new Timer(30)
+var timer_ziel = new Timer(420)
+var timer_score = new Timer(15)
 
 function loop() {
     // Background-Scrolling:
     backgroundPosition = backgroundPosition + 5;
-    if(backgroundPosition > 4239.35) {
-        backgroundPosition = 750.175
-    }
+        if(backgroundPosition > 4239.35) {
+            backgroundPosition = 750.175
+        }
+    
     spielfeld.style.backgroundPosition = `0 -${backgroundPosition}px`;
-    /*if(backgroundPosition > 0.5 * vh && start) {
-        start = false
-        spielfeld.style.backgroundImage =  "url(Bilder/Background_loop_ohne_Begrenzung.jpg)"
-    }*/
-
 
     // Tastatursteuerung links-rechts:
     if(keyboard(39)) {
@@ -69,14 +60,15 @@ function loop() {
 
     var raender = document.querySelectorAll('.rand')
     for(var rand of raender) {
-        rand.style.top = parseInt(rand.style.top) - 5 + 'px'
+        rand.style.top = "47vh"
+        /*rand.style.top = parseInt(rand.style.top) - 10 + 'px'
         if(parseInt(rand.style.top) < -100) {
             rand.parentNode.removeChild(rand)
-        }
+        }*/
     }
 
     // Hindernis - Stein:
-   if(timer_stein.ready()) {
+    if(timer_stein.ready()) {
         var s = document.createElement('img')
         s.src="Bilder/Stein.png"
         s.classList.add('stein')
@@ -165,8 +157,8 @@ function loop() {
         }
     }
 
-     // Hindernis - Stern:
-     if(timer_stern.ready()) {
+    // Hindernis - Stern:
+    if(timer_stern.ready()) {
         var w = document.createElement('img')
         w.src='Bilder/Stern.png'
         w.classList.add('stern')
@@ -182,6 +174,28 @@ function loop() {
             stern.parentNode.removeChild(stern)
         }
     }
+
+    // Zielbogen
+    /*if(backgroundPosition > 4239.35) {
+        if(timer_ziel.ready()) {
+            var ziel = document.createElement('img')
+            ziel.src='Bilder/Ziel.png'
+            ziel.classList.add('ziel')
+            ziel.style.top = document.body.clientHeight + "px"
+            spielfeld.appendChild(ziel)
+            var ziel_l = document.createElement('img')
+            ziel_l.src='Bilder/Ziellinie.png'
+            ziel_l.classList.add('ziellinie')
+            ziel_l.style.top = document.body.clientHeight + "px"
+            spielfeld.appendChild(ziel_l)
+        }
+    }
+
+    var ziel = document.querySelector('.ziel')
+    ziel.style.top = parseInt(ziel.style.top) - 5 + 'px'
+    var ziel_l = document.querySelector('.ziellinie')
+    ziel_l.style.top = parseInt(ziel_l.style.top) - 5 + 'px'*/
+
 
     // Kollision mit Tor oder Stein:
     if(anyCollision(spielerbody, tore1) || anyCollision(spielerbody, tore2) || anyCollision(spielerbody, steine) || anyCollision(spielerbody, raender)) {
@@ -206,9 +220,14 @@ function loop() {
         score = score + 20
         punkteAnzeige.textContent = score
     }
+    if(timer_score.ready()) {
+        score = score + 1
+        punkteAnzeige.textContent = score
+    }
 
 
     window.requestAnimationFrame(loop)
 }
 
 window.requestAnimationFrame(loop)
+
