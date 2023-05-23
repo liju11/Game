@@ -60,11 +60,11 @@ function loop() {
 
     var raender = document.querySelectorAll('.rand')
     for(var rand of raender) {
-        rand.style.top = "47vh"
-        /*rand.style.top = parseInt(rand.style.top) - 10 + 'px'
+        //rand.style.top = "47vh"
+        rand.style.top = parseInt(rand.style.top) - 5 + 'px'
         if(parseInt(rand.style.top) < -100) {
             rand.parentNode.removeChild(rand)
-        }*/
+        }
     }
 
     // Hindernis - Stein:
