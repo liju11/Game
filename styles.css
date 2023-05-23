@@ -36,9 +36,9 @@
 
 .rand {
     position: absolute;
-    background-image: url(Bilder/Rand.png);
+    /*background-image: url(Bilder/Rand.png);*/
     width: 1.3vw;
-    height: 50vh;
+    height: 100vh;
 }
 
 .rand_links {

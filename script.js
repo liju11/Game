@@ -60,8 +60,12 @@ function loop() {
 
     var raender = document.querySelectorAll('.rand')
     for(var rand of raender) {
-        //rand.style.top = "47vh"
-        rand.style.top = parseInt(rand.style.top) - 5 + 'px'
+        rand.style.height = parseInt(rand.style.height) + 1 + 'vh'
+            rand.style.top = parseInt(rand.style.top) - 1 + 'vh'
+            console.log(rand.style.top)
+        /*if(rand.style.height < 100 + 'vh') {
+            
+        }*/
         if(parseInt(rand.style.top) < -100) {
             rand.parentNode.removeChild(rand)
         }
