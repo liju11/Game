@@ -17,7 +17,7 @@ var timer_block_r = new Timer(400)
 var timer_stein = new Timer(240)
 var timer_stern = new Timer(360)
 var timer_rand = new Timer(30)
-var timer_ziel = new Timer(420)
+//var timer_ziel = new Timer(420)
 var timer_score = new Timer(15)
 
 function loop() {
