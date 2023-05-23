@@ -13,7 +13,7 @@
     width: 100vw;
     height: 100vh;
     background-image: url(Bilder/Start_V2.jpg);
-    background-size: auto;
+    background-size: cover;
 }
 
 .score {
