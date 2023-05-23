@@ -8,11 +8,49 @@
     overflow: hidden;
 }
 
+.splashscreen {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-image: url(Bilder/Splashscreen.jpg);
+    background-size: cover;
+}
+
+.start_button {
+    position: relative;
+    display: flex;
+    width: 22vw;
+    height: auto;
+    top: 74vh;
+    left: 64vw;
+    border-radius: 48px;
+}
+
+.anleitung_button {
+    position: relative;
+    display: flex;
+    width:22vw;
+    height: auto;
+    top: 50vh;
+    left: 64vw;
+    border-radius: 48px;
+}
+
+.start_button:hover {
+   -webkit-box-shadow: 4px 5px 16px 0.5px rgba(0,0,0,0.3); 
+    box-shadow: 4px 5px 16px 0.5px rgba(0,0,0,0.3);
+}
+
+.anleitung_button:hover {
+    -webkit-box-shadow: 4px 5px 16px 0.5px rgba(0,0,0,0.3); 
+    box-shadow: 4px 5px 16px 0.5px rgba(0,0,0,0.3);
+}
+
 .playground {
     position: relative;
     width: 100vw;
     height: 100vh;
-    background-image: url(Bilder/Start_V2.jpg);
+    background-image: url(Bilder/Start_V3.jpg);
     background-size: auto cover;
     background-repeat: no-repeat;
 }
