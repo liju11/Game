@@ -25,14 +25,16 @@ function loop() {
     //Counter
     counter = counter + 1
 
+    if(counter > (document.body.clientHeight / 5)) {
+        spielfeld.style.backgroundImage = "url(Bilder/Test_4.jpg)"
+
+    }
+
     // Background-Scrolling:
     backgroundPosition = backgroundPosition + 5;
-        /*if(backgroundPosition > 4239.35) {
-            backgroundPosition = 750.175
-        }*/
-        if(backgroundPosition > 3489.175 / (1080 / document.body.clientHeight)) {
-            backgroundPosition = 0
-        }
+    if(backgroundPosition > 3489.175 / (1080 / document.body.clientHeight)) {
+        backgroundPosition = 0
+    }
     
     spielfeld.style.backgroundPosition = `center -${backgroundPosition}px`;
 

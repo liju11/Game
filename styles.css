@@ -56,14 +56,9 @@ body {
     width: auto;
     background-size: cover;
     aspect-ratio: inherit;
-    /*background-image: url(Bilder/Start_V3.jpg);*/
-    background-image: url(Bilder/Test_4.jpg);
+    background-image: url(Bilder/Start_V4.jpg);
     background-repeat: no-repeat;
     background-position-x: center;
-    /*padding-left: 31.25%;
-    
-    width: auto;
-    padding-right: 31.25%;*/
 
 }
 
