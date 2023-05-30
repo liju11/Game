@@ -4,7 +4,10 @@
     overflow: hidden;
 }
 
-.body {
+
+body {
+    height: 100vh;
+    aspect-ratio: 16 / 9;
     overflow: hidden;
 }
 
@@ -14,6 +17,7 @@
     height: 100vh;
     background-image: url(Bilder/Splashscreen.jpg);
     background-size: cover;
+    background-position: center;
 }
 
 .start_button {
@@ -48,11 +52,19 @@
 
 .playground {
     position: relative;
-    width: 100vw;
     height: 100vh;
-    background-image: url(Bilder/Start_V3.jpg);
-    background-size: auto cover;
+    width: auto;
+    background-size: cover;
+    aspect-ratio: inherit;
+    /*background-image: url(Bilder/Start_V3.jpg);*/
+    background-image: url(Bilder/Test_4.jpg);
     background-repeat: no-repeat;
+    background-position-x: center;
+    /*padding-left: 31.25%;
+    
+    width: auto;
+    padding-right: 31.25%;*/
+
 }
 
 .score {

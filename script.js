@@ -17,17 +17,24 @@ var timer_block_r = new Timer(400)
 var timer_stein = new Timer(240)
 var timer_stern = new Timer(360)
 var timer_rand = new Timer(30)
-//var timer_ziel = new Timer(420)
 var timer_score = new Timer(15)
+var counter = 0
+
 
 function loop() {
+    //Counter
+    counter = counter + 1
+
     // Background-Scrolling:
     backgroundPosition = backgroundPosition + 5;
-        if(backgroundPosition > 4239.35) {
+        /*if(backgroundPosition > 4239.35) {
             backgroundPosition = 750.175
+        }*/
+        if(backgroundPosition > 3489.175 / (1080 / document.body.clientHeight)) {
+            backgroundPosition = 0
         }
     
-    spielfeld.style.backgroundPosition = `0 -${backgroundPosition}px`;
+    spielfeld.style.backgroundPosition = `center -${backgroundPosition}px`;
 
     // Tastatursteuerung links-rechts:
     if(keyboard(39)) {
