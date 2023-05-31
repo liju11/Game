@@ -20,6 +20,24 @@ body {
     background-position: center;
 }
 
+.anleitungscreen {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-image: url(Bilder/anleitung-screen.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.gameover {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-image: url(Bilder/game-over.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
 .start_button {
     position: relative;
     display: flex;
@@ -27,6 +45,15 @@ body {
     height: auto;
     top: 74vh;
     left: 64vw;
+    border-radius: 48px;
+}
+
+.restart_button {
+    position: relative;
+    display: flex;
+    width: 22vw;
+    height: auto;
+    top: 74vh;
     border-radius: 48px;
 }
 
