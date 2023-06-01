@@ -48,15 +48,6 @@ body {
     border-radius: 48px;
 }
 
-.restart_button {
-    position: relative;
-    display: flex;
-    width: 22vw;
-    height: auto;
-    top: 74vh;
-    border-radius: 48px;
-}
-
 .anleitung_button {
     position: relative;
     display: flex;
@@ -185,4 +176,13 @@ body {
     width: 70vw;
     height: auto;
     left: 15vw;
+}
+
+.restart_button {
+    position: relative;
+    display: flex;
+    width: 22vw;
+    height: auto;
+    top: 74vh;
+    border-radius: 48px;
 }
