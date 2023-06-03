@@ -1,9 +1,13 @@
+@font-face {
+    font-family: 'Pilsner';
+    src: url('liajungi/Library/Fonts/Pilsner Regular.ttf');
+  }
+
 * {
     margin: 0;
     padding: 0;
     overflow: hidden;
 }
-
 
 body {
     height: 100vh;
@@ -48,6 +52,16 @@ body {
     border-radius: 48px;
 }
 
+.restart_button {
+    position: relative;
+    display: flex;
+    width: 22vw;
+    height: auto;
+    top: 74vh;
+    left: 41vw;
+    border-radius: 48px;
+}
+
 .anleitung_button {
     position: relative;
     display: flex;
@@ -59,6 +73,11 @@ body {
 }
 
 .start_button:hover {
+   -webkit-box-shadow: 4px 5px 16px 0.5px rgba(0,0,0,0.3); 
+    box-shadow: 4px 5px 16px 0.5px rgba(0,0,0,0.3);
+}
+
+.restart_button:hover {
    -webkit-box-shadow: 4px 5px 16px 0.5px rgba(0,0,0,0.3); 
     box-shadow: 4px 5px 16px 0.5px rgba(0,0,0,0.3);
 }
@@ -92,8 +111,11 @@ body {
 .punkte {
     position: relative;
     width: 70%;
-    left: 20%;
+    left: 14%;
     font-size: medium;
+    font-family: 'Pilsner', sans-serif;
+    /* font-family: Arial, Helvetica, sans-serif; */
+    font-size: 26pt;
     font-weight: 600;
 }
 
@@ -176,13 +198,4 @@ body {
     width: 70vw;
     height: auto;
     left: 15vw;
-}
-
-.restart_button {
-    position: relative;
-    display: flex;
-    width: 22vw;
-    height: auto;
-    top: 74vh;
-    border-radius: 48px;
 }
