@@ -18,6 +18,7 @@ var timer_stein = new Timer(240)
 var timer_stern = new Timer(360)
 var timer_rand = new Timer(30)
 var timer_score = new Timer(15)
+var timer_snow = new Timer(Math.random () * 5)
 var counter = 0
 
 
@@ -71,7 +72,6 @@ function loop() {
     for(var rand of raender) {
         rand.style.height = parseInt(rand.style.height) + 1 + 'vh'
             rand.style.top = parseInt(rand.style.top) - 1 + 'vh'
-            console.log(rand.style.top)
         /*if(rand.style.height < 100 + 'vh') {
             
         }*/
@@ -141,7 +141,6 @@ function loop() {
         r.src='Bilder/Tor_rot.png'
         r.classList.add('tor2')
         r.style.top = document.body.clientHeight + "px"
-        //r.style.left = 50 + Math.random () * 20 + 'vw'
         r.style.right = 30 + Math.random () * 20 + 'vw'
         spielfeld.appendChild(r)
     }
@@ -188,6 +187,26 @@ function loop() {
         }
     }
 
+    // Schneeflocken
+    if (score > 150) {
+        if(timer_snow.ready()) {
+            var s = document.createElement('img')
+            s.src ='Bilder/Snowflake.png'
+            s.classList.add('snowflake')
+            s.style.top = 0
+            s.style.left = Math.random () * 100 + 'vw'
+            spielfeld.appendChild(s)
+        }
+    }
+
+    var snowflakes = document.querySelectorAll('.snowflake')
+    for(var snowflake of snowflakes) {
+        snowflake.style.top = parseInt(snowflake.style.top) + 5 + 'px'
+        if(parseInt(snowflake.style.top) < -100) {
+            snowflake.parentNode.removeChild(snowflake)
+        }
+    }
+
     // Zielbogen
     /*if(backgroundPosition > 4239.35) {
         if(timer_ziel.ready()) {
@@ -212,17 +231,24 @@ function loop() {
 
     // Kollision mit Tor oder Stein:
     if(anyCollision(spielerbody, tore1) || anyCollision(spielerbody, tore2) || anyCollision(spielerbody, steine) || anyCollision(spielerbody, raender)) {
-        // alert("Game over! Collision.")
+        //alert("Game over! Collision.")
         window.location.href = 'game_over.html';
         return
     }
 
     // Tor verpasst
     if(anyCollision(spielerbody, bloecke_b) || anyCollision(spielerbody, bloecke_r)) {
-        // alert("Game over! Missed gate.")
+        //alert("Game over! Missed gate.")
         window.location.href = 'game_over.html';
         return
     }
+
+    // Score Game Over
+        /*if(anyCollision(spielerbody, bloecke_b) || anyCollision(spielerbody, bloecke_r)) {
+        var score_gameover = document.createElement('p')
+    score_gameover.classList.add('punkte_gameover')
+    score_gameover.textContent('Your score was' + score)
+    }*/
 
     // Kollision mit Stern
     var collisions = allCollisions(spieler, sterne)
