@@ -21,21 +21,22 @@ var timer_score = new Timer(15)
 var timer_snow = new Timer(Math.random () * 5)
 var counter = 0
 
+spielfeld.style.backgroundImage = "url(Bilder/Test_4.jpg)"
 
 function loop() {
     //Counter
     counter = counter + 1
 
-    if(counter > (document.body.clientHeight / 5)) {
+    /*if(counter > (document.body.clientHeight / 5)) {
         spielfeld.style.backgroundImage = "url(Bilder/Test_4.jpg)"
 
-    }
+    }*/
 
     // Background-Scrolling:
-    backgroundPosition = backgroundPosition + 5;
-    if(backgroundPosition > 3489.175 / (1080 / document.body.clientHeight)) {
+    backgroundPosition = backgroundPosition + 0;
+    /*if(backgroundPosition > 3489.175 / (1080 / document.body.clientHeight)) {
         backgroundPosition = 0
-    }
+    }*/
     
     spielfeld.style.backgroundPosition = `center -${backgroundPosition}px`;
 
@@ -106,6 +107,13 @@ function loop() {
         b.style.top = document.body.clientHeight + "px"
         b.style.left = 30 + Math.random () * 20 + 'vw'
         spielfeld.appendChild(b)
+
+        var block_b = document.createElement('div')
+        block_b.classList.add('block_blau')
+        block_b.style.top = document.body.clientHeight + 50 + 'px'
+        block_b.style.left = b.style.left
+        spielfeld.appendChild(block_b)
+
         timer_b = new Timer(400)
     }
 
@@ -115,15 +123,6 @@ function loop() {
         if(parseInt(tor1.style.top) < -100) {
             tor1.parentNode.removeChild(tor1)
         }
-    }
-
-    if(timer_block_b.ready()) {
-        var block_b = document.createElement('div')
-        block_b.classList.add('block_blau')
-        block_b.style.top = document.body.clientHeight + 50 + 'px'
-        block_b.style.left = b.style.left
-        spielfeld.appendChild(block_b)
-        timer_block_b = new Timer(400)
     }
 
     var bloecke_b = document.querySelectorAll('.block_blau')
@@ -143,6 +142,12 @@ function loop() {
         r.style.top = document.body.clientHeight + "px"
         r.style.right = 30 + Math.random () * 20 + 'vw'
         spielfeld.appendChild(r)
+
+        var block_r = document.createElement('div')
+        block_r.classList.add('block_rot')
+        block_r.style.top = document.body.clientHeight + 50 + 'px'
+        block_r.style.right = r.style.right
+        spielfeld.appendChild(block_r)
     }
 
     var tore2 = document.querySelectorAll('.tor2')
@@ -151,14 +156,6 @@ function loop() {
         if(parseInt(tor2.style.top) < -100) {
             tor2.parentNode.removeChild(tor2)
         }
-    }
-
-    if(timer_block_r.ready()) {
-        var block_r = document.createElement('div')
-        block_r.classList.add('block_rot')
-        block_r.style.top = document.body.clientHeight + 50 + 'px'
-        block_r.style.right = r.style.right
-        spielfeld.appendChild(block_r)
     }
 
     var bloecke_r = document.querySelectorAll('.block_rot')
