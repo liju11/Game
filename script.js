@@ -210,6 +210,7 @@ function loop() {
     // Kollision mit Tor oder Stein:
     if(anyCollision(spielerbody, tore1) || anyCollision(spielerbody, tore2) || anyCollision(spielerbody, steine) || anyCollision(spielerbody, raender)) {
         //alert("Game over! Collision.")
+        window.localStorage.setItem("score", score)
         window.location.href = 'game_over.html';
         return
     }
@@ -217,6 +218,7 @@ function loop() {
     // Tor verpasst
     if(anyCollision(spielerbody, bloecke_b) || anyCollision(spielerbody, bloecke_r)) {
         //alert("Game over! Missed gate.")
+        window.localStorage.setItem("score", score)
         window.location.href = 'game_over.html';
         return
     }

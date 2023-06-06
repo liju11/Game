@@ -16,5 +16,10 @@
             <img src="/Bilder/restart_button.png">
         </a>
     </div>
+    <script>
+        var score = localStorage.getItem("score")
+        var score_gameover = document.querySelector('.punkte_gameover')
+        score_gameover.textContent = 'Your score was' + score
+    </script>
 </body>
 </html>
