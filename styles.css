@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Pilsner';
-    src: url('liajungi/Library/Fonts/Pilsner Regular.ttf');
+    src: url('Pilsner Regular.ttf');
   }
 
 * {
@@ -11,7 +11,7 @@
 
 body {
     height: 100vh;
-    aspect-ratio: 16 / 9;
+    /* aspect-ratio: 16 / 9; */
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -94,7 +94,7 @@ body {
     height: 100vh;
     width: auto;
     background-size: cover;
-    aspect-ratio: inherit;
+    /* aspect-ratio: inherit; */
     background-image: url(Bilder/Start_V4.jpg);
     background-repeat: no-repeat;
     background-position-x: center;
