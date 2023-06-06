@@ -207,6 +207,7 @@ function loop() {
         }
     }
 
+
     // Kollision mit Tor oder Stein:
     if(anyCollision(spielerbody, tore1) || anyCollision(spielerbody, tore2) || anyCollision(spielerbody, steine) || anyCollision(spielerbody, raender)) {
         //alert("Game over! Collision.")
