@@ -207,28 +207,6 @@ function loop() {
         }
     }
 
-    // Zielbogen
-    /*if(backgroundPosition > 4239.35) {
-        if(timer_ziel.ready()) {
-            var ziel = document.createElement('img')
-            ziel.src='Bilder/Ziel.png'
-            ziel.classList.add('ziel')
-            ziel.style.top = document.body.clientHeight + "px"
-            spielfeld.appendChild(ziel)
-            var ziel_l = document.createElement('img')
-            ziel_l.src='Bilder/Ziellinie.png'
-            ziel_l.classList.add('ziellinie')
-            ziel_l.style.top = document.body.clientHeight + "px"
-            spielfeld.appendChild(ziel_l)
-        }
-    }
-
-    var ziel = document.querySelector('.ziel')
-    ziel.style.top = parseInt(ziel.style.top) - 5 + 'px'
-    var ziel_l = document.querySelector('.ziellinie')
-    ziel_l.style.top = parseInt(ziel_l.style.top) - 5 + 'px'*/
-
-
     // Kollision mit Tor oder Stein:
     if(anyCollision(spielerbody, tore1) || anyCollision(spielerbody, tore2) || anyCollision(spielerbody, steine) || anyCollision(spielerbody, raender)) {
         //alert("Game over! Collision.")
